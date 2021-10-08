@@ -26,7 +26,7 @@ Bazat pe ce proprietati sa fie gasita cea mai lunga subsecventa?
     14. Toate numerele au partea întreagă egală cu partea fracționară.
     15. Toate numerele se pot scrie ca x**k, k citit, x întreg pozitiv.
     16. Toate numerele sunt în progresie aritmetică.
-    17. Media numerelor nu depășește o valoare citită.
+    17. Media numerelor nu depășește o valoare k citită.
     18. Numărul de cifre este în ordine descrescătoare.
     19. Concatenarea numerelor din subsecvență are cifrele în ordine crescătoare.
     20. Concatenarea numerelor din subsecvență este număr prim.

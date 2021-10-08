@@ -20,14 +20,21 @@ from get_longest_concat_digits_asc import get_longest_concat_digits_asc         
 from get_longest_concat_is_prime import get_longest_concat_is_prime                 # 20
 import menus
 
+
 def main():
     option = ''
     properties = []
     data = []
 
+    functions = [get_longest_all_perfect_squares, get_longest_all_primes, get_longest_alternating_signs, get_longest_sorted_asc,
+             get_longest_all_palindromes, get_longest_div_k, get_longest_all_not_prime, get_longest_sum_is_prime, get_longest_product_is_odd,
+             get_longest_all_even, get_longest_same_bit_counts, get_longest_same_div_count, get_longest_prime_digits, get_longest_equal_int_real,
+             get_longest_powers_of_k, get_longest_arithmetic_progression, get_longest_average_below, get_longest_digit_count_desc,
+             get_longest_concat_digits_asc, get_longest_concat_is_prime]
+
     while True:
         print(
-        """     Ce doresti sa faci? 
+            """     Ce doresti sa faci? 
         1. Citire date
         2. Determinare cea mai lunga subsecventa pe baza uneia sau a mai multor proprietati
         3. Iesire
@@ -39,61 +46,19 @@ def main():
         elif option == '2':
             properties = menus.select_properties()
 
-            if 1 in properties:
-                data = get_longest_all_perfect_squares(data)
-            if 2 in properties:
-                data = get_longest_all_primes(data)
-            if 3 in properties:
-                data = get_longest_alternating_signs(data)
-            if 4 in properties:
-                data = get_longest_sorted_asc(data)
-            if 5 in properties:
-                data = get_longest_all_palindromes(data)
-            if 6 in properties:
-                k = int(input("Pentru proprietatea 6 e necesara citirea lui k. Cat sa fie k?"))
-                data = get_longest_div_k(data, k)
-            if 7 in properties:
-                data = get_longest_all_not_prime(data)
-            if 8 in properties:
-                data = get_longest_sum_is_prime(data)
-            if 9 in properties:
-                 data = get_longest_product_is_odd(data)
-            if 10 in properties:
-                 data = get_longest_all_even(data)
-            if 11 in properties:
-                 data = get_longest_same_bit_counts(data)
-            if 12 in properties:
-                 data = get_longest_same_div_count(data)
-            if 13 in properties:
-                data = get_longest_prime_digits(data)
-            if 14 in properties:
-                data = get_longest_equal_int_real(data)
-            if 15 in properties:
-                k = int(input("Pentru proprietatea 15 e necesara citirea lui k. Cat sa fie k?"))
-                data = get_longest_powers_of_k(data, k)
-            if 16 in properties:
-                 data = get_longest_arithmetic_progression(data)
-            if 17 in properties:
-                 k = int(input("Pentru proprietatea 17 e necesara citirea unei valori. Cat sa fie valoarea?"))
-                 data = get_longest_average_below(data, k)
-            if 18 in properties:
-                 data = get_longest_digit_count_desc(data)
-            if 19 in properties:
-                 data = get_longest_concat_digits_asc(data)
-            if 20 in properties:
-                data = get_longest_concat_is_prime(data)                
-                
+            for properti in properties:
+                if properti in (6,15,17):
+                    k = int(input(f"Pentru proprietatea {properti} e necesara citirea unui k aditional. Cat sa fie k?"))
+                    data = functions[properti-1](data, k)
+                else:
+                    data = functions[properti-1](data)
+
             print(f"Cea mai lunga subsecventa cu proprietatile {properties} e {data}")
 
         elif option == '3':
             break
         else:
             print("Nu exista o astfel de optiune, incearca din nou.")
-
-
-
-
-
 
 
 if __name__ == "__main__":
