@@ -64,6 +64,6 @@ def test_get_longest_same_bit_counts():
     assert get_longest_same_bit_counts([5,9,2,1,7,21,76,48]) == [7,21,76]
     assert get_longest_same_bit_counts([12,4,16,91,5]) == [4,16]
     assert get_longest_same_bit_counts([]) == []
-    assert get_longest_same_bit_counts([0]) == []
+    assert get_longest_same_bit_counts([0]) == [0]
 
 test_get_longest_same_bit_counts()
